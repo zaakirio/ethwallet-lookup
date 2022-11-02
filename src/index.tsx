@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {DataRender} from './DataRender';
+import {DataRender} from './components/DataRender';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
