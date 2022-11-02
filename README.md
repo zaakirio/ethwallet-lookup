@@ -3,8 +3,6 @@
 This project was created with NodeJs, Typescript, React,  and Etherscan.io
 
 ## Running the Project
-`npm install`
-Set etherscan API KEY
-`npm start`
+Start by running `npm install`, ensure you have set your .env file to use your etherscan API KEY and start the project with `npm start`
 
 
