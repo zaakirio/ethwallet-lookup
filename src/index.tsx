@@ -1,13 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {DataRender} from './components/DataRender';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { DataRender } from "./components/DataRender";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <DataRender />
   </React.StrictMode>
 );
-

@@ -9,3 +9,6 @@ originalBalance: number,
 }
 On front end compare original balance with current balance to determine whether + or - or no change
 have paste clipboard next to search icon to paste clipboard into field
+
+1) first implementation start with adding wallet bookmarks to local storage
+2) Once works, consider using db approach
