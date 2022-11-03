@@ -1,10 +1,24 @@
 .header {
-  background-color: #282c34;
+  background-color: #d6dbe4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.button-style {
+  padding: 10px;
+  margin: 55px;
+  font-size: 15px;
+}
+.title {
+  color:black;
+}
+.output {
+  margin: 25px;
+  padding: 15px;
+}
+
+.input-style {
+  width: 375px;
 }

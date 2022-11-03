@@ -1,5 +1,8 @@
 import React, { useRef, useCallback } from 'react';
 import { useState, useEffect } from 'react';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import Input from '@mui/material/Input';
 import axios from 'axios';
 import './DataRender.css';
 
@@ -30,13 +33,27 @@ const inputRef = React.useRef<HTMLInputElement>(null);
         }
     }, []);
 
+    const bookMarkWallet = (walletAddress: string) => {
+        // 
+        // Check if user is logged in, if not logged in offer registration/sign in modal - allow sign in via github/google
+        // 
+        // Create mongodb entry
+    }
+    //  
+    // get connection to mongo db
+    // verify login
+    // create search history of wallets
+    // bookmarks + history
+    // 
+
 
     return (
             <div className='header'>
-                <h1>Ethereum Wallet Lookup</h1>
-                <input ref={inputRef}/>
-      <button onClick={updateWallet}>Click</button>
-      <h4>{wallet ? wallet : ""}</h4>
+                <Typography className='title' fontSize={30}>Ethereum Wallet Lookup</Typography>
+                <Input className='input-style' inputRef={inputRef}/>
+      <Button className='button-style' onClick={updateWallet}>Enter</Button>
+      <Typography className='output' fontSize={20}>{wallet ? wallet + " ETH" : ""}</Typography>
+      <Star
       </div>
     );
 };
