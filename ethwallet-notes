@@ -2,11 +2,7 @@
 > create account to view bookmarked wallets
 > add ethereum logo above ethereum wallet lookup (maybe gif)
 > add side panel to view bookmarked wallets, showing whether it has increased or decreased since original price log
-> Each wallet query stored in mongoDB
-wallet : {
-walletId: number,
-originalBalance: number,
-}
+
 On front end compare original balance with current balance to determine whether + or - or no change
 have paste clipboard next to search icon to paste clipboard into field
 
