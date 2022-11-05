@@ -10,5 +10,8 @@ originalBalance: number,
 On front end compare original balance with current balance to determine whether + or - or no change
 have paste clipboard next to search icon to paste clipboard into field
 
-1) first implementation start with adding wallet bookmarks to local storage
-2) Once works, consider using db approach
+
+1) Get wallet balance from API
+2) Set Wallet model with balance and wallet address
+3) If bookmark pressed, open dialouge and add option to name wallet
+4) Set name on Wallet and display wallet in list

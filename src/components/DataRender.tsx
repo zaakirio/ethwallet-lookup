@@ -7,36 +7,34 @@ import RadarIcon from "@mui/icons-material/Radar";
 import axios from "axios";
 import "./DataRender.css";
 import { IconButton, Tooltip } from "@mui/material";
+import Wallet from "../types/Wallet";
 
-export const DataRender: React.FC = () => {
-  const [wallet, setWallet] = useState("");
+export function DataRender() {
+  const [wallet, setWallet] = useState<Wallet>();
   const [error, setError] = useState("");
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const updateWallet = () => {
     if (!inputRef.current) {
       setError("Please enter a valid wallet address");
-    } else if (
-      inputRef.current.value.length >= 40 &&
-      inputRef.current?.value.length <= 42
-    ) {
+    } else if (inputRef.current.value.length >= 40 &&
+      inputRef.current?.value.length <= 42) {
       getWalletData(inputRef.current.value);
     } else {
       setError("Please enter a valid wallet address");
     }
   };
 
-  const getWalletData = useCallback(async (walletAddress: string) => {
-    try {
-      const response = await axios.get(
-        `https://api.etherscan.io/api?module=account&action=balance&address=${walletAddress}&tag=latest&apikey=${process.env.REACT_APP_API_KEY}`
-      );
+  const getWalletData = async (walletAddress: string) => {
+    axios.get(
+      `https://api.etherscan.io/api?module=account&action=balance&address=${walletAddress}&tag=latest&apikey=${process.env.REACT_APP_API_KEY}`
+    ).then(response => {
       const data = (response.data.result / 1000000000000000000).toString();
-      setWallet(data);
-    } catch (error) {
-      return 0;
+      const walletResult: Wallet = { address: walletAddress, balance: data };
+      setWallet(walletResult);
     }
-  }, []);
+    );
+  };
 
   return (
     <div className="header">
@@ -50,7 +48,7 @@ export const DataRender: React.FC = () => {
       {wallet ? (
         <>
           <Typography className="output" fontSize={20}>
-            {wallet + " ETH"}
+            {wallet.balance + " ETH"}
           </Typography>
           <Tooltip title="Add wallet to watchlist">
             <IconButton>
