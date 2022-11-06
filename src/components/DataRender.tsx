@@ -3,12 +3,10 @@ import { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
-import RadarIcon from "@mui/icons-material/Radar";
 import axios from "axios";
 import "./DataRender.css";
-import { IconButton, Tooltip } from "@mui/material";
 import Wallet from "../types/Wallet";
-
+import LoginDialog from './LoginDialog';
 export function DataRender() {
   const [wallet, setWallet] = useState<Wallet>();
   const [error, setError] = useState("");
@@ -50,11 +48,7 @@ export function DataRender() {
           <Typography className="output" fontSize={20}>
             {wallet.balance + " ETH"}
           </Typography>
-          <Tooltip title="Add wallet to watchlist">
-            <IconButton>
-              <RadarIcon />{" "}
-            </IconButton>
-          </Tooltip>
+<LoginDialog/>
         </>
       ) : (
         <Typography className="output" fontSize={17}>
