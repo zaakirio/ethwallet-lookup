@@ -1,4 +1,4 @@
-export default interface Wallet {
+export default interface IWalletData {
     id?: any | null,
     title?: string,
     address: string,
