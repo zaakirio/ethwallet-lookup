@@ -2,12 +2,13 @@ import React, { useRef, useCallback } from "react";
 import { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import Input from "@mui/material/Input";
 import axios from "axios";
 import "./DataRender.css";
 import Wallet from "../../types/Wallet";
 import LoginDialog from "../LoginDialog/LoginDialog";
 import { getWalletData } from "../../services/api/walletData";
+import { Grid, Input, Layout } from "antd";
+
 export function DataRender() {
   const [wallet, setWallet] = useState<Wallet>();
   const [error, setError] = useState("");
@@ -26,26 +27,23 @@ export function DataRender() {
 
 
   return (
-    <div className="header">
+    <Layout>
       <Typography className="title" fontSize={30}>
-        Ethereum Wallet Lookup
+        EthLookup
       </Typography>
-      <Input className="input-style" inputRef={inputRef} />
-      <Button className="button-style" onClick={updateWallet}>
-        Enter
-      </Button>
+      <Input.Search allowClear style={{ width: '40%' }} defaultValue="Enter wallet address" onClick={updateWallet} />
       {wallet ? (
         <>
           <Typography className="output" fontSize={20}>
             {wallet.balance + " ETH"}
           </Typography>
-<LoginDialog/>
+          <LoginDialog />
         </>
       ) : (
         <Typography className="output" fontSize={17}>
           {error}
         </Typography>
       )}
-    </div>
+    </Layout>
   );
 };
