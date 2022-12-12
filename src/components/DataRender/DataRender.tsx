@@ -5,8 +5,9 @@ import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
 import axios from "axios";
 import "./DataRender.css";
-import Wallet from "../types/Wallet";
-import LoginDialog from './LoginDialog';
+import Wallet from "../../types/Wallet";
+import LoginDialog from "../LoginDialog/LoginDialog";
+import { getWalletData } from "../../services/api/walletData";
 export function DataRender() {
   const [wallet, setWallet] = useState<Wallet>();
   const [error, setError] = useState("");
@@ -23,16 +24,6 @@ export function DataRender() {
     }
   };
 
-  const getWalletData = async (walletAddress: string) => {
-    axios.get(
-      `https://api.etherscan.io/api?module=account&action=balance&address=${walletAddress}&tag=latest&apikey=${process.env.REACT_APP_API_KEY}`
-    ).then(response => {
-      const data = (response.data.result / 1000000000000000000).toString();
-      const walletResult: Wallet = { address: walletAddress, balance: data };
-      setWallet(walletResult);
-    }
-    );
-  };
 
   return (
     <div className="header">
