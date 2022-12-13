@@ -1,0 +1,8 @@
+.card-padding  { 
+    padding: 30px;
+}
+
+.card-shadow {
+    filter: drop-shadow(0.5rem 0.3rem 0.5rem rgba(153, 135, 135, 0.5));
+
+}

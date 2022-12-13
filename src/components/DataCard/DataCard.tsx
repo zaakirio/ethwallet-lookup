@@ -1,26 +1,57 @@
 import React from 'react';
-import { Card, Col, Row } from 'antd';
-
+import { Avatar, Card, Col, Row } from 'antd';
+import './DataCard.css'
+import { AntDesignOutlined, ApartmentOutlined, NodeIndexOutlined, UserOutlined } from '@ant-design/icons';
 const DataCard: React.FC = () => (
-  <div className="site-card-wrapper">
-    <Row gutter={16}>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-    </Row>
-  </div>
+  <Row gutter={24} justify="center" className="card-padding">
+    <Col span={4}>
+      <Card bordered={true} className="card-shadow">
+        <Avatar size={64} icon={<UserOutlined />} />
+        <p>Current Price</p>
+        <p>24HR High</p>       
+        <p>24HR Low</p>
+      </Card>
+    </Col>
+    <Col span={4}>
+      <Card  bordered={true} className="card-shadow">
+        <Avatar size={64} icon={<NodeIndexOutlined />
+        } />
+        ETH GAS FEES
+        24h high
+        24h low
+      </Card>
+    </Col>
+    <Col span={4}>
+
+      <Card  bordered={true} className="card-shadow">
+              <Avatar size={64} icon={<ApartmentOutlined />
+      } />
+        Current staking rates
+        
+      </Card>
+      
+    </Col>
+    <Col span={4}>
+
+<Card  bordered={true} className="card-shadow">
+        <Avatar size={64} icon={<ApartmentOutlined />
+} />
+  Current staking rates
+  
+</Card>
+
+</Col>
+<Col span={4}>
+
+<Card  bordered={true} className="card-shadow">
+        <Avatar size={64} icon={<ApartmentOutlined />
+} />
+  Staking Pools
+  
+</Card>
+
+</Col>
+  </Row>
 );
 
 export default DataCard;

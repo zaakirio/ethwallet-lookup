@@ -1,13 +1,15 @@
 import React, { useRef, useCallback } from "react";
 import { useState, useEffect } from "react";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import axios from "axios";
 import "./DataRender.css";
 import Wallet from "../../types/Wallet";
 import LoginDialog from "../LoginDialog/LoginDialog";
 import { getWalletData } from "../../services/api/walletData";
-import { Grid, Input, Layout } from "antd";
+import { Grid, Input, Layout, Typography } from "antd";
+import { Content } from "antd/es/layout/layout";
+import { SendOutlined, ThunderboltOutlined } from "@ant-design/icons";
+
+const { Search } = Input;
 
 export function DataRender() {
   const [wallet, setWallet] = useState<Wallet>();
@@ -25,25 +27,27 @@ export function DataRender() {
     }
   };
 
-
   return (
-    <Layout>
-      <Typography className="title" fontSize={30}>
+    <Layout style={{display: 'flex', alignItems:'center' , height:'100%' ,background:"white" }}>
+      <Content style={{maxHeight: '100%', width:'50%'}}>
+      <Typography.Title>
         EthLookup
-      </Typography>
-      <Input.Search allowClear style={{ width: '40%' }} defaultValue="Enter wallet address" onClick={updateWallet} />
-      {wallet ? (
+      </Typography.Title>
+
+      <Search placeholder="input search text" allowClear={true} enterButton={<SendOutlined />} size="large" loading />
+      {/* {wallet ? (
         <>
-          <Typography className="output" fontSize={20}>
+          <Typography className="output">
             {wallet.balance + " ETH"}
           </Typography>
           <LoginDialog />
         </>
       ) : (
-        <Typography className="output" fontSize={17}>
+        <Typography className="output">
           {error}
         </Typography>
-      )}
+      )} */}
+            </Content>
     </Layout>
   );
 };

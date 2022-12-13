@@ -25,14 +25,14 @@ const App: React.FC = () => {
     ]
 
     return (
-       <Layout className="layout">
+       <Layout>
             <Menu
+            style={{width: '100%', justifyContent: 'center'}}
                 theme="light"
                 mode="horizontal"
                 defaultSelectedKeys={['2']}
                 items={items}
                 className="layout" />
-
         </Layout>
     );
 };
