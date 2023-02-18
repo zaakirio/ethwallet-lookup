@@ -1,57 +1,107 @@
 import React from 'react';
-import { Avatar, Card, Col, Row } from 'antd';
 import './DataCard.css'
 import { AntDesignOutlined, ApartmentOutlined, NodeIndexOutlined, UserOutlined } from '@ant-design/icons';
-const DataCard: React.FC = () => (
-  <Row gutter={24} justify="center" className="card-padding">
-    <Col span={4}>
-      <Card bordered={true} className="card-shadow">
-        <Avatar size={64} icon={<UserOutlined />} />
-        <p>Current Price</p>
-        <p>24HR High</p>       
-        <p>24HR Low</p>
-      </Card>
-    </Col>
-    <Col span={4}>
-      <Card  bordered={true} className="card-shadow">
-        <Avatar size={64} icon={<NodeIndexOutlined />
-        } />
-        ETH GAS FEES
-        24h high
-        24h low
-      </Card>
-    </Col>
-    <Col span={4}>
+import CardInfo from '../../types/CardInfo';
+import CardContent from '@mui/material/CardContent';
+import Grid from '@mui/material/Grid';
+import { Box, Card } from '@mui/material';
 
-      <Card  bordered={true} className="card-shadow">
-              <Avatar size={64} icon={<ApartmentOutlined />
-      } />
-        Current staking rates
-        
-      </Card>
-      
-    </Col>
-    <Col span={4}>
 
-<Card  bordered={true} className="card-shadow">
-        <Avatar size={64} icon={<ApartmentOutlined />
-} />
-  Current staking rates
-  
-</Card>
 
-</Col>
-<Col span={4}>
+const DataCard: React.FC = () => {
 
-<Card  bordered={true} className="card-shadow">
-        <Avatar size={64} icon={<ApartmentOutlined />
-} />
-  Staking Pools
-  
-</Card>
+  return (
+    <Grid container spacing={0}>
+      <Card className="card-container" style={{ boxShadow: "13px 10px black" }} sx={{
+      }}>
+        <CardContent>
+          <Grid container>
+            <Grid item xs>
+              Title 1
+              <div className="title">
+                Price
+              </div>
+            </Grid>
 
-</Col>
-  </Row>
-);
+            <Grid item>
+              <div style={{ fontSize: "17px" }}>
+                Track Progress
+              </div>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card><Card className="card-container" style={{ boxShadow: "13px 10px black" }} sx={{
+        root: {
+          maxWidth: 310,
+          transition: "transform 0.15s ease-in-out",
+          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+        },
+      }}>
+        <CardContent>
+          <Grid container>
+            <Grid item xs>
+              Title 1
+              <div className="title">
+                Price
+              </div>
+            </Grid>
+
+            <Grid item>
+              <div style={{ fontSize: "17px" }}>
+                Track Progress
+              </div>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card><Card className="card-container" style={{ boxShadow: "13px 10px black" }} sx={{
+        root: {
+          maxWidth: 310,
+          transition: "transform 0.15s ease-in-out",
+          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+        },
+      }}>
+        <CardContent>
+          <Grid container>
+            <Grid item xs>
+              Title 1
+              <div className="title">
+                Price
+              </div>
+            </Grid>
+
+            <Grid item>
+              <div style={{ fontSize: "17px" }}>
+                Track Progress
+              </div>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card><Card className="card-container" style={{ boxShadow: "13px 10px black" }} sx={{
+        root: {
+          maxWidth: 310,
+          transition: "transform 0.15s ease-in-out",
+          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
+        },
+      }}>
+        <CardContent>
+          <Grid container>
+            <Grid item xs>
+              Title 1
+              <div className="title">
+                Price
+              </div>
+            </Grid>
+
+            <Grid item>
+              <div style={{ fontSize: "17px" }}>
+                Track Progress
+              </div>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card></Grid>
+
+  )
+}
 
 export default DataCard;
