@@ -11,96 +11,104 @@ import { Box, Card } from '@mui/material';
 const DataCard: React.FC = () => {
 
   return (
-    <Grid container spacing={0}>
-      <Card className="card-container" style={{ boxShadow: "13px 10px black" }} sx={{
-      }}>
+    <Grid
+      container
+      spacing={0}
+      direction="row"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Card className="card-container" style={{ boxShadow: "13px 10px black" }}>
         <CardContent>
           <Grid container>
             <Grid item xs>
-              Title 1
+              Current price
               <div className="title">
-                Price
+                $2,500
               </div>
             </Grid>
 
             <Grid item>
               <div style={{ fontSize: "17px" }}>
-                Track Progress
+                Daily Average
+              </div>
+              <div style={{ fontSize: "17px" }}>
+                24%+ 15%-
               </div>
             </Grid>
           </Grid>
         </CardContent>
-      </Card><Card className="card-container" style={{ boxShadow: "13px 10px black" }} sx={{
-        root: {
-          maxWidth: 310,
-          transition: "transform 0.15s ease-in-out",
-          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
-        },
-      }}>
+      </Card><Card className="card-container" style={{ boxShadow: "13px 10px black" }}>
         <CardContent>
           <Grid container>
             <Grid item xs>
-              Title 1
+              Marketcap Distribution
               <div className="title">
-                Price
+                Binance: x
+              </div>
+                            <div className="title">
+                Coinbase: x
+              </div>
+                            <div className="title">
+                Eth Foundation: x
+              </div>
+              
+            </Grid>
+
+            <Grid item>
+              <div style={{ fontSize: "17px" }}>
+                Daily average
+              </div>
+              <div style={{ fontSize: "17px" }}>
+                -25% +1%
+              </div>
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+      <Card className="card-container" style={{ boxShadow: "13px 10px black" }}>
+        <CardContent>
+          <Grid container>
+            <Grid item xs>
+              Gas Fees
+              <div className="title">
+                500 wei
               </div>
             </Grid>
 
             <Grid item>
               <div style={{ fontSize: "17px" }}>
-                Track Progress
+                Daily average
+              </div>
+              <div style={{ fontSize: "17px" }}>
+                -25% +1%
               </div>
             </Grid>
           </Grid>
         </CardContent>
-      </Card><Card className="card-container" style={{ boxShadow: "13px 10px black" }} sx={{
-        root: {
-          maxWidth: 310,
-          transition: "transform 0.15s ease-in-out",
-          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
-        },
-      }}>
+      </Card>
+      <Card className="card-container" style={{ boxShadow: "13px 10px black" }}>
         <CardContent>
           <Grid container>
             <Grid item xs>
-              Title 1
+              Staking Rates
               <div className="title">
-                Price
+                0.01ETH APY
               </div>
             </Grid>
 
             <Grid item>
               <div style={{ fontSize: "17px" }}>
-                Track Progress
+                Monthly average
               </div>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card><Card className="card-container" style={{ boxShadow: "13px 10px black" }} sx={{
-        root: {
-          maxWidth: 310,
-          transition: "transform 0.15s ease-in-out",
-          "&:hover": { transform: "scale3d(1.05, 1.05, 1)" },
-        },
-      }}>
-        <CardContent>
-          <Grid container>
-            <Grid item xs>
-              Title 1
-              <div className="title">
-                Price
-              </div>
-            </Grid>
-
-            <Grid item>
               <div style={{ fontSize: "17px" }}>
-                Track Progress
+                -25% +1%
               </div>
             </Grid>
           </Grid>
         </CardContent>
-      </Card></Grid>
-
+      </Card>
+    </Grid>
   )
 }
 
