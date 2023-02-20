@@ -4,8 +4,7 @@ import axios from "axios";
 import "./Searchbar.css";
 import Wallet from "../../types/Wallet";
 import LoginDialog from "../LoginDialog/LoginDialog";
-import { getWalletData } from "../../services/api/walletData";
-import { Content } from "antd/es/layout/layout";
+// import { getWalletData } from "../../services/api/walletData";
 import { SendOutlined, ThunderboltOutlined } from "@ant-design/icons";
 import SearchBar from '@mkyy/mui-search-bar';
 import Grid from "@mui/material/Grid";
@@ -21,7 +20,7 @@ export const Searchbar = () => {
       setError("Please enter a valid wallet address");
     } else if (inputRef.current.value.length >= 40 &&
       inputRef.current?.value.length <= 42) {
-      getWalletData(inputRef.current.value);
+      // getWalletData(inputRef.current.value);
     } else {
       setError("Please enter a valid wallet address");
     }

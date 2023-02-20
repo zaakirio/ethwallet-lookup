@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './DataCard.css'
 import { AntDesignOutlined, ApartmentOutlined, NodeIndexOutlined, UserOutlined } from '@ant-design/icons';
 import CardInfo from '../../types/CardInfo';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import { Box, Card } from '@mui/material';
-
+// import { WalletData } from '../../services/api/walletData';
+import axios from 'axios';
 
 
 const DataCard: React.FC = () => {
+  const [wallet, setWallet] = useState<string>();
+  const [price, setPrice] = useState<string>();
 
+const getEthPrice = async () => {
+  axios.get(
+    `http://api.etherscan.io/api?module=stats&action=ethprice&apikey=${process.env.REACT_APP_API_KEY}`
+  ).then(response => {
+    const data = response.data.result.ethusd;
+    setPrice(data);
+  }
+  );
+};
+useEffect(() => {
+  getEthPrice();
+},[price])
+  
   return (
     <Grid
       container
@@ -24,7 +40,7 @@ const DataCard: React.FC = () => {
             <Grid item xs>
               Current price
               <div className="title">
-                $2,500
+                {price}
               </div>
             </Grid>
 
@@ -46,13 +62,13 @@ const DataCard: React.FC = () => {
               <div className="title">
                 Binance: x
               </div>
-                            <div className="title">
+              <div className="title">
                 Coinbase: x
               </div>
-                            <div className="title">
+              <div className="title">
                 Eth Foundation: x
               </div>
-              
+
             </Grid>
 
             <Grid item>
