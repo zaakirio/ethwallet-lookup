@@ -9,5 +9,11 @@
   }
   .title {
     font-weight: 600;
-    font-size: 50px;
+    font-size: 30px;
+  }
+  .table-container {
+    margin: 25px;
+    border: solid 2px white;
+    width: 1850px;
+    height: 375px;
   }
